@@ -1,0 +1,9 @@
+= CPP-Korrektur
+
+== To-Do
+
+- [x] Code understanding
+- [x] Code auswerten und Fehlerquellen finden
+- [x] Bugs fixen
+- [x] Erklärungen schreiben
+- [ ] Schritte wiederholen für Teilaufgabe 3
