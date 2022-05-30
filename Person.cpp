@@ -2,7 +2,12 @@
 //#include <iostream>
 
 //Konstruktor
-hfu::Person::Person(std::string firstname, std::string lastname):firstname(firstname), lastname(lastname){} //1a
+hfu::Person::Person(std::string firstname, std::string lastname):firstname(firstname), lastname(lastname){}//1a
+
+
+hfu::Person::Person(){}
+
+
 //getter
 std::string hfu::Person::getLastname() const {
     return this->lastname;
@@ -15,7 +20,7 @@ std::string hfu::Person::getFirstname() const {
 //Aufgabe 3
 
 bool hfu::Person::operator<(const Person &other) {
-    if (this->compare(other) < 0) {
+    if (this->compare(other) > 0) {
         return true;                                    //true other Person ist kleiner
     } else {
         return false;
@@ -23,7 +28,7 @@ bool hfu::Person::operator<(const Person &other) {
 }
 
 bool hfu::Person::operator>(const Person &other) {
-    if (this->compare(other) < 0) {
+    if (this->compare(other) < 0) {                     //Typo
         return true;                                    //true other Person ist größer
     } else {
         return false;
@@ -66,10 +71,12 @@ void hfu::Person::sort(Person *p, int size)                  //4.2
     }
 }
 
+/*
 hfu::Person& hfu::Person::operator=(const hfu::Person &assignation) {    //7.1b
     if(this == &assignation)
         return *this;
-    delete[] firstname;
-    firstname = std::string firstname;
+    delete firstname;
+    firstname = new std::string;
     return *this;
-}
+} */
+

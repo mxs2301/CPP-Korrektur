@@ -23,6 +23,22 @@ namespace hfu {
 
         static void sort(Person *p, int size);
     };
+
+    template<typename T> void sort(T* Arr, const int size){
+        for(int i = 0; i<size-1; i++){
+            for(int j = 0; j<size-1; j++){
+                if(Arr[j]<Arr[j+1]){
+                    T temp = Arr[j];
+                    Arr[j] = Arr[j+1];
+                    Arr[j+1] = temp;
+                }
+            }
+        }
+    }
+
+
 }
+
+
 
 #endif //AUFGABENBLATT3_PERSON_H

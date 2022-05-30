@@ -4,6 +4,10 @@
 #include <cassert>
 
 
+
+
+
+
 void test_person() {          //1c
 //    //hfu::Person person;
 //    std::string donald = "Donald";
@@ -97,20 +101,23 @@ void test_scores() {
     assert(scored_movie.getScore(2)==1);
     assert(scored_movie.getScore(3)==1);
 }
-void test_7_Person(){                                 //7.1a
-    hfu::Person* arrayCopy() {
-        hfu::Person* result = new hfu::Person[4];
-        result[0]=hfu::Person("Minnie", "Maus");
-        result[1]=hfu::Person("Daisy", "Duck");
-        result[2]=hfu::Person("Donald", "Duck");
-        result[3]=hfu::Person("Micky", "Maus");
-        return result;
-    }
+
+hfu::Person* arrayCopy() {
+    hfu::Person* result = new hfu::Person[4];
+    result[0]=hfu::Person("Minnie", "Maus");
+    result[1]=hfu::Person("Daisy", "Duck");
+    result[2]=hfu::Person("Donald", "Duck");
+    result[3]=hfu::Person("Micky", "Maus");
+    return result;
 }
+
+
 void test_sort7(){
     int size = 4;
     hfu::Person* persons = arrayCopy();
-    hfu::sort(persons, size);
+
+    hfu::sort(persons, 4);
+
     assert((persons[0]).getFirstname() == "Daisy");
     assert((persons[1]).getFirstname() == "Donald");
     assert((persons[2]).getFirstname() == "Micky");
@@ -118,6 +125,9 @@ void test_sort7(){
     delete[] persons;
 
 }
+
+
+
 
 int main() {
     std::cout<<"Starting..."<<std::endl;
@@ -127,6 +137,8 @@ int main() {
     std::cout<<"Continuing..."<<std::endl;
     test_sort();
     test_scores();
+    std::cout<<"Test for 7..."<<std::endl;
+    test_sort7();
     std::cout<<"Terminating..."<<std::endl;
     return 0;
 }
