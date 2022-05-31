@@ -2,7 +2,7 @@
 #include "Person.h"
 #include "Movie.h"
 #include <cassert>
-
+#include "Wordsequence.h"
 
 
 
@@ -127,6 +127,31 @@ void test_sort7(){
 }
 
 
+void test_final(){
+
+    hfu::Person* persons = arrayCopy();
+    hfu::SimpleVector list(persons, 3);
+    assert(list.getSize()==3);
+    assert(list[2].getFirstname()=="Donald");
+    assert(list[2].getLastname()=="Duck");
+    list[2]=persons[3];
+    assert(list[2].getFirstname()=="Micky");
+    assert(list[2].getLastname()=="Maus");
+    hfu::SimpleVector copy;
+    assert(copy.getSize()==0);
+    copy=list;
+    assert(copy[2].getFirstname()=="Micky");
+    assert(copy[2].getLastname()=="Maus");
+    list[2]=persons[2];
+    assert(copy[2].getFirstname()=="Micky");
+    assert(copy[2].getLastname()=="Maus");
+    copy=copy;
+    assert(copy[2].getFirstname()=="Micky");
+    assert(copy[2].getLastname()=="Maus");
+    delete[] persons;
+
+}
+
 
 
 int main() {
@@ -139,6 +164,7 @@ int main() {
     test_scores();
     std::cout<<"Test for 7..."<<std::endl;
     test_sort7();
+    test_final();
     std::cout<<"Terminating..."<<std::endl;
     return 0;
 }

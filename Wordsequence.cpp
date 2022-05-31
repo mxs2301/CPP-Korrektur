@@ -1,4 +1,3 @@
-#include "Wordsequence.h"
 #include<iostream>
 //hfu::Wordsequence::Wordsequence(std::string *words, int size){}      //6.1a
 hfu::Wordsequence::Wordsequence(std::string *words, int size) : words(arrayCopy(words, size)), size(size) {}      //6.1a,c(arrayCopy(words, size))
